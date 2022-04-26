@@ -66276,6 +66276,7 @@ module.exports=[
 "seaport.museum",
 "settlement.museum",
 "settlers.museum",
+"shell.museum",
 "sherbrooke.museum",
 "sibenik.museum",
 "silk.museum",
