@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [13.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -30,3 +30,6 @@ jobs:
       run: npm i firebase-tools -g  
     - name: deploy
       run: firebase deploy --token ${{ secrets.GCLOUD_TOKEN }}
+
+
+    
