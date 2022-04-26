@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "aframe-html-shader": "^0.2.0"
+  }
+}

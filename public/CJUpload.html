@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Upload Image</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i"
+        rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="assets/css/fa.css" rel="stylesheet" />
+    <link href="assets/css/Community Journal.css" rel="stylesheet" />
+    <link href="https://code.jquery.com/mobile/1.5.0-rc1/jquery.mobile-1.5.0-rc1.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href="assets/css/lightslider.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/upload.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+    <div class="bg-wrap">
+        <img class="bg-img" src="assets/img/background.jpg" alt="">
+        <section class="vh-100 content" style="overflow-x: scroll;">
+
+            <div class="welcome-text text-center" style="display: inline-flex;
+            align-items: center; margin:auto">
+                <div class="px-3" style="position: absolute; left: 5px;">
+                    <a href="CommunityJournal.html"><i class="fas fa-chevron-left"></i></a>
+                </div>
+                Community Journal - Upload Request
+            </div>
+
+
+            <div id="container" class="pt-5 h-100" style="overflow: scroll;">
+                <div class="mx-auto my-5">
+                    <div class="container ipBox">
+                        <img id="imgpreview">
+                    </div>
+                    <div id="textboxes" class="mb-3" style="display: none;">
+                        <div class="px-5 mb-2">
+                            <label for="title" class="form-label">Title:</label>
+                            <input type="text" class="form-control" id="title" placeholder="Title">
+                        </div>
+                        <div class="px-5 mb-2">
+                            <label for="caption" class="form-label">Caption:</label>
+                            <input type="text" class="form-control" id="caption" placeholder="Caption" maxlength="240">
+                        </div>
+                        <div class="px-5 mb-2">
+                            <label for="trail" class="form-label">Select Trail:</label>
+                            <select class="form-select" id="trail" style="border-color:black;max-width: fit-content;">
+                                <option value="Little India">Little India</option>
+                                <option value="Peranakan">Peranakan</option>
+                                <option value="Kampong Glam">Kampong Glam</option>
+                                <option value="Chinatown">Chinatown</option>
+                            </select>
+                        </div>
+                    </div>
+                    <label class="btn btn-primary" for="img">Choose Image</label>
+                    <input type="file" id="img" name="img" accept="image/*" onchange="showPreview(event);">
+                    <button id="btnUpload" style="display: none;" type="button" class="btn btn-success">Upload</button>
+                </div>
+            </div>
+
+            <nav class="navbar-fixed-bottom navbar-default" style="padding-top: 15%; ">
+                <div class="tab-nav-container text-center" style="background-color: #70a0ca;">
+                    <a href="overview.html">
+                    <div>
+                        <div class="tab red">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <p class="tab-text">Home</p>
+                    </div>
+                    </a>
+                    <a href="map.html">
+                        <div>
+                            <div class="tab purple">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <p class="tab-text">Map</p>
+                        </div>
+                    </a>
+                    <a href="CommunityJournal.html">
+                        <div>
+                            <div class="tab active orange">
+                                <i class="fas fa-images"></i>
+                            </div>
+                            <p class="tab-text active">Gallery</p>
+                        </div>
+                    </a>
+                </div>
+            </nav>
+            <!-- Modal -->
+            <div class="modal fade" id="uploadedModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="modalTitle" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle">Successful Request</h5>
+                        </div>
+                        <div class="modal-body">
+                            Your upload request is successful.
+                        </div>
+                        <div class="modal-footer">
+                            <a href="CommunityJournal.html"><button type="button"
+                                    class="btn btn-primary">Understood</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+
+    </div>
+
+    </section>
+    <!-- End Login -->
+
+    <main id="main"></main>
+    <!-- End #main -->
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        function showPreview(event) {
+            if (event.target.files.length > 0) {
+                var src = URL.createObjectURL(event.target.files[0]);
+                var preview = document.getElementById("imgpreview");
+                preview.src = src;
+                preview.style.display = "block";
+                var btnUpload = document.getElementById('btnUpload');
+                btnUpload.style.display = "inline-block";
+                var textboxes = document.getElementById('textboxes');
+                textboxes.style.display = "block";
+            }
+        }
+    </script>
+
+    <script type="module">
+
+
+        import {
+            initializeApp
+        } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js'
+        import {
+            getStorage, ref, uploadBytes, getDownloadURL
+        } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-storage.js'
+
+        import { 
+            getDatabase, ref as dbRef ,set 
+        } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js'
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAiWhsurmpe0XHv5fT6woKqY6hURnd4Kno",
+            authDomain: "fypj-f74df.firebaseapp.com",
+            databaseURL: "https://fypj-f74df-default-rtdb.asia-southeast1.firebasedatabase.app",
+            storageBucket:  "fypj-f74df.appspot.com",
+        };
+        const firebaseApp = initializeApp(firebaseConfig);
+
+        var timestamp = "";
+        var file;
+        var filename = ""
+        const imgSelector = document.getElementById('img');
+        imgSelector.addEventListener('change', (event) => {
+            const imgList = event.target.files;
+            console.log(imgList[0]);
+            file = imgList[0]
+            const dateobj = new Date();
+            const date = dateobj.getDate().toString();
+            const month = (dateobj.getMonth() + 1).toString();
+            const year = dateobj.getFullYear().toString();
+            const hours = dateobj.getHours().toString();
+            const minutes = dateobj.getMinutes().toString();
+            const seconds = dateobj.getSeconds().toString();
+            timestamp = date + month + year + hours + minutes + seconds;
+            console.log(timestamp);
+            filename = timestamp + file.name;
+        });
+        // Get a reference to the storage service, which is used to create references in your storage bucket
+        const storage = getStorage(firebaseApp);
+        const uploadbtn = document.getElementById('btnUpload');
+        function writetoDB(filename,title,caption,trail,imageUrl) {
+            const db = getDatabase();
+            console.log(filename)
+            set(dbRef(db,'UploadRequests/' + timestamp), {
+                title: title,
+                caption: caption,
+                trail:trail,
+                image: imageUrl,
+                approved:false,
+            })
+        }
+        uploadbtn.addEventListener('click',(event)=>{
+            const storageRef = ref(storage,filename);
+
+            uploadBytes(storageRef, file).then((snapshot)=> {
+                console.log(snapshot);
+                
+                console.log('Uploaded Successfully');
+                getDownloadURL(storageRef).then((url) => {
+                    console.log(url,"URL");
+                    var title = document.getElementById('title').value;
+                    var caption = document.getElementById('caption').value;
+                    var trail = document.getElementById('trail').value;
+                    writetoDB(filename,title,caption,trail,url);
+                });
+                var hostname = location.hostname;
+                var link =  "https://"+hostname+"/CJApproval.html?"+timestamp
+                var body = "Dear admin,<br> Please take a look at this upload request.<br> Request: " + link;
+               
+                Email.send({
+                    Host : "smtp-relay.sendinblue.com",
+                    Port: "587",
+                    Username : "pa.heartland.trails@gmail.com",
+                    Password : "awdWO7mI0hBVRrb4",
+                    To : "dragonaccyip@yahoo.com.sg",
+                    From : "pa.heartland.trails@gmail.com",
+                    Subject : "Upload Request",
+                    Body : body
+                }).then((message) =>{
+                    var modal = new bootstrap.Modal(document.getElementById("uploadedModal"))
+                    modal.show();
+                    console.log(message);
+                });
+                
+            })
+           
+        });
+       
+
+    </script>
+</body>
+
+</html>

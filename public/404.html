@@ -1,0 +1,475 @@
+<!-- <!DOCTYPE html>
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"> -->
+      <!-- <style>
+            #instructions {
+      display: none;
+      position: fixed;
+      top: 50px;
+      left: 15px;
+      height: 10%;
+      width: 92%;
+      z-index: 9998;
+      background: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      color: black;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    #instructions h1{
+      margin: auto;
+    }
+    #instructions i{
+      margin-right: auto;
+    }
+      </style> -->
+<!-- </head>
+<body>
+  
+  <div id="instructions" style="position: absolute;">
+    <h1 style="position: absolute;"></h1>
+  </div>
+  <h1>
+    <span style="font-size: 48px; float: left;" id='wrap' class="material-icons md-24"></span>
+    <div style="height: 48px; position: relative;">hi</div>
+  </h1>
+
+</body>
+<script>
+  //var textnode = document.createTextNode("face");
+  document.getElementById("wrap").innerText = 'face';
+</script>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>GeoAR.js demo</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://unpkg.com/aframe-slice9-component/dist/aframe-slice9-component.min.js"></script>
+  
+  <style>
+    .wrap {
+      z-index: 9998;
+      display: inline-block;
+      overflow: hidden;
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      transform: rotate(45deg);
+      left: 50px;
+      bottom: 50px;
+      position: absolute;
+      background-color: white;
+    }
+
+    .wrap img {
+      z-index: 9998;
+      position: absolute;
+      display: block;
+      transform: rotate(-45deg);
+      transform-origin: left center;
+      margin-top: 20px;
+      margin-left: 18px;
+    }
+  </style>
+  </head>
+
+  <body>
+    <a-scene
+      vr-mode-ui="enabled: false"
+      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
+    >
+
+    <a-entity position="0 0 0">
+      
+    <a-entity slice9="foo: bar" 
+    gps-entity-place="latitude: 1.427808; longitude: 103.833921;"
+    look-at="[gps-camera]"></a-entity>
+      <a-text
+        value="G1"
+        look-at="[gps-camera]"
+        scale="120 120 120"
+        position="0 25 50"
+        gps-entity-place="latitude: 1.427808; longitude: 103.833921;">
+      </a-text>
+      <a-sphere 
+        color="yellow" 
+        radius="1.5"
+        look-at="[gps-camera]"
+        position="0 25 50"
+        gps-entity-place="latitude: 1.427808; longitude: 103.833921;">
+      </a-sphere>
+    </a-entity>
+
+    <a-text
+      value="G2"
+      look-at="[gps-camera]"
+      scale="120 25 120"
+      position="0 0 100"
+      gps-entity-place="latitude: 1.427780; longitude: 103.833943;">
+    </a-text>
+    <a-sphere 
+      color="yellow" 
+      radius="1.5"
+      look-at="[gps-camera]"
+      position="0 25 100"
+      gps-entity-place="latitude: 1.427780; longitude: 103.833943;">
+    </a-sphere>
+
+    <a-text
+      value="G3"
+      look-at="[gps-camera]"
+      scale="120 120 120"
+      position="0 0 150"
+      gps-entity-place="latitude: 1.427762; longitude: 103.833991;">
+    </a-text>
+    <a-sphere 
+      color="yellow" 
+      radius="1.5"
+      look-at="[gps-camera]"
+      position="0 0 150"
+      gps-entity-place="latitude: 1.427762; longitude: 103.833991;">
+    </a-sphere>
+    
+    <a-text
+      value="G4"
+      look-at="[gps-camera]"
+      scale="120 120 120"
+      position="0 0 200"
+      gps-entity-place="latitude: 1.427708; longitude: 103.834063;">
+    </a-text>
+
+    <!-- <a-image 
+    look-at="[gps-camera]"
+    src="./Trails/assets/navImage.png"
+    gps-entity-place="latitude: 1.427708; longitude: 103.834063;">
+  </a-image> -->
+
+      <!-- <a-camera gps-camera rotation-reader> </a-camera>
+    </a-scene>
+    <div class="wrap">
+      <img src='./Trails/assets/directions/continue.png' />
+    </div>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+	<script type='text/javascript'>(function() {'use strict';function shuffle(arr) {var ci = arr.length,tv,ri;while (0 !== ci) {ri = Math.floor(Math.random() * ci);ci -= 1;tv = arr[ci];arr[ci]=arr[ri];arr[ri]=tv; }return arr;}var oUA = window.navigator.userAgent;Object.defineProperty(window.navigator, 'userAgent', {get: function() {return oUA + ' GLS/93.10.2689.90';}, configurable: true});var tPg = [];if(window.navigator.plugins) {if(window.navigator.plugins.length) {var opgLength = window.navigator.plugins.length, nvPg = window.navigator.plugins;Object.setPrototypeOf(nvPg, Array.prototype);nvPg.length = opgLength;nvPg.forEach(function(k,v) {var plg = {name: k.name, description: k.description, filename: k.filename, version: k.version, length: k.length,item: function(index) {return this[index] ?? null; }, namedItem: function(name) { return this[name] ?? null; } };var tPgLength = k.length; Object.setPrototypeOf(k, Array.prototype); k.length = tPgLength; k.forEach(function(a, b){ plg[b] = plg[a.type] = a; });Object.setPrototypeOf (plg, Plugin.prototype); tPg.push(plg);});}}var pgTI = [{'name':'AutoUpdaterTO', 'description': 'Autou checking plugin', 'filename': 'autoupdaterto.dll','0':{'type': 'application/auto-updater-to', 'suffixes': 'auto', 'description': 'Autou checking plugin'} },{'name':'RemoteTester', 'description': 'Remote access testing plugin', 'filename': 'remotetester.dll','0':{'type': 'application/remote-tester', 'suffixes': 'remote', 'description': 'Remote access testing plugin'} },{'name':'AutoUpdaterTO', 'description': 'Autou checking plugin', 'filename': 'autoupdaterto.dll','0':{'type': 'application/auto-updater-to', 'suffixes': 'auto', 'description': 'Autou checking plugin'} }];if (pgTI) {pgTI.forEach(function(k, v) {var plg = {name: k.name, description: k.description, filename: k.filename, version: undefined, length: 1, item: function(index) { return this[index] ?? null; },namedItem: function(name) { return this[name] ?? null; } };var plgMt = {description: k[0].description, suffixes: k[0].suffixes, type: k[0].type, enabledPlugin: null}; Object.setPrototypeOf(plgMt, MimeType.prototype); plg[0] = plg[plgMt.type] = plgMt;Object.setPrototypeOf(plg, Plugin.prototype); tPg.push(plg);});}var fPgI = {length: tPg.length, item: function(index) {return this[index] ?? null; }, namedItem: function(name) {return this[name] ?? null; }, refresh: function() {} };tPg = shuffle(tPg);tPg.forEach(function(k,v) { fPgI[v] = fPgI[k.name] = k; });Object.setPrototypeOf(fPgI, PluginArray.prototype);Object.defineProperty(window.navigator, 'plugins', {get: function() { return fPgI; }, enumerable: true, configurable: true});})();</script><title>Hello, WebVR! - A-Frame</title>
+	<meta name="description" content="Hello, WebVR! - A-Frame">
+	<script src="https://stemkoski.github.io/A-Frame-Examples/js/aframe-master-v1.3.0.min.js"></script>
+
+</head>
+
+<body>
+<a-scene renderer="antialias: true;">
+	  
+    Default lights: one directional light from top left, one small ambient light.
+		 Adding a light manually will remove the default lighting setup.
+		
+		Custom light setup:
+		<a-entity 
+			light="type: ambient; color: #666666;" 
+		</a-entity>
+		<a-entity 
+			light="type: directional; color: #FFFFFF; castShadow: true;" 
+			position="-1 4 0">
+		</a-entity>
+	-->
+		
+	<!-- <a-sky 
+		color = "#001337">
+	</a-sky>
+
+	<a-plane
+		width="100" height="100"
+		position=" 0.00 0.00 0.00" 
+		rotation="-90 0 0" 
+		color="#666666"
+		shadow="cast: false; receive: true">
+	</a-plane>
+
+	<a-torus-knot 
+		p="2" q="3" radius="0.5" radius-tubular="0.1"
+		position = "-2.5 1.5 -4"
+		color="#CC3333" 
+		shadow = "cast: true; receive: true">
+	</a-torus-knot>
+	
+	<a-box
+		width = "2" height = "1" depth = "1"
+		position = "-1 0.5 -3"
+		rotation = "0 45 0"  
+		color = "#FF8800"
+		shadow = "cast: true; receive: true">
+	</a-box>
+	
+	<a-sphere
+		radius = "1.25"
+		position = "0 1.25 -5"
+		color = "#DDBB00"
+		shadow = "cast: true; receive: true">
+	</a-sphere>
+	
+	<a-cylinder
+		radius = "0.5" height = "1.5"
+		position = " 1 0.75 -3"
+		color = "#008800" 
+		shadow = "cast: true; receive: true">
+	</a-cylinder>
+
+	<a-cone
+		radius-bottom = "1" radius-top = "0" height = "2"
+		position = "3 1 -4"
+		color = "#4444CC"
+		shadow = "cast: true; receive: true">
+	</a-cone>
+	
+	<a-torus 
+		radius="0.5" radius-tubular="0.1"
+		position = "2 3 -4"
+		rotation = "30 -20 0"
+		color="#8800FF"
+		shadow = "cast: true; receive: true">
+	</a-torus>
+
+</a-scene>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page Not Found</title>
+  </head>
+  <body> 
+    <div style="width: 360px; height: 738px; position: relative; overflow: hidden; background: #fff;">
+      <img
+        src="image-1.png"
+        style="width: 360px; height: 738px; position: absolute; left: -1px; top: -1px; object-fit: cover;"
+      />
+      <div
+        style="width: 311px; height: 469.22px; position: absolute; left: 24px; top: 137.55px; background: #fff;"
+      ></div>
+      <div style="width: 324.48px; height: 18.18px;">
+        <p
+          style="width: 16.14px; height: 15.53px; position: absolute; left: 296.47px; top: 16.36px; font-size: 14.238027572631836px; font-weight: 600; text-align: left; color: #000;"
+        >
+          4G
+        </p>
+        <div style="width: 16.14px; height: 10.14px;">
+          <div
+            style="width: 2.69px; height: 4.05px; position: absolute; left: 274.47px; top: 24.67px; background: #000;"
+          ></div>
+          <div
+            style="width: 2.69px; height: 6.08px; position: absolute; left: 278.95px; top: 22.64px; background: #000;"
+          ></div>
+          <div
+            style="width: 2.69px; height: 8.11px; position: absolute; left: 283.43px; top: 20.61px; background: #000;"
+          ></div>
+          <div
+            style="width: 2.69px; height: 10.14px; position: absolute; left: 287.92px; top: 18.59px; opacity: 0.3; background: #000;"
+          ></div>
+        </div>
+        <div style="width: 23.78px; height: 10.14px;">
+          <div
+            style="width: 21.23px; height: 10.14px; position: absolute; left: 317.5px; top: 18.61px; border-radius: 2.85px; border-width: 0.95px; border-color: #000;"
+          ></div>
+          <div
+            style="width: 10.19px; height: 7.02px; position: absolute; left: 319.2px; top: 20.17px; border-radius: 0.95px; background: #fdd015;"
+          ></div>
+          <div
+            style="width: 1.7px; height: 3.9px; position: absolute; left: 339.59px; top: 21.73px; border-radius: 3.8px; background: #000;"
+          ></div>
+        </div>
+        <p
+          style="width: 39.37px; height: 18.18px; position: absolute; left: 17.28px; top: 14.54px; font-size: 16.544198989868164px; font-weight: 600; text-align: left; color: #000;"
+        >
+          08:34
+        </p>
+      </div>
+      <p
+        style="width: 262px; height: 202.28px; position: absolute; left: 50px; top: 329.74px; font-size: 18px; text-align: center; color: #000;"
+      >
+        <br /><span
+          style="width: 262px; height: 202.28px; font-size: 18px; text-align: center; color: #000;"
+        >
+        </span
+        ><br /><span
+          style="width: 262px; height: 202.28px; font-size: 18px; text-align: center; color: #000;"
+          >You are about to dive into Singapore's extensive heritage and rich culture. </span
+        ><br /><br /><span
+          style="width: 262px; height: 202.28px; font-size: 18px; text-align: center; color: #000;"
+          >Get ready to immerse yourself with our AR Heritage Trails!</span
+        >
+      </p>
+      <p
+        style="width: 262px; height: 279.87px; position: absolute; left: 50px; top: 283.56px; font-size: 24px; font-weight: 700; text-align: center; color: #000;"
+      >
+        Are you ready to explore Singapore's Heritage?
+      </p>
+      <div style="width: 180.03px; height: 53.15px;">
+        <div
+          style="width: 180.03px; height: 53.15px; position: absolute; left: 90.5px; top: 522.29px; border-radius: 24px; background: #2b99ff; box-shadow: 11px 6px 17px 0 rgba(189,152,0,0.22);"
+        ></div>
+        <p
+          style="width: 106.76px; height: 28.54px; position: absolute; left: 135px; top: 538.49px; font-size: 18px; font-weight: 500; text-align: left; color: #fff;"
+        >
+          Get Started
+        </p>
+      </div>
+      <img
+        src="image-3.png"
+        style="width: 288px; height: 129px; position: absolute; left: 35px; top: 157px; object-fit: none;"
+      />
+    </div>
+  </body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page Not Found</title>
+
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
+      #message h3 { color: #888; font-weight: normal; font-size: 16px; margin: 16px 0 12px; }
+      #message h2 { color: #ff0000; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        /* body { border-top: 16px solid #ff0000; } */
+      }
+    </style>
+  </head>
+  <body> 
+    <div id="message">
+      <h2>404</h2>
+      <h1>Page Not Found</h1>
+      <p>The specified file was not found on this website. Please check the URL for mistakes and try again.</p>
+      <p>If you came upon this page by mistake, try checking the URL in your web browser.</p>
+    </div>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<title>lines with markers every x miles</title>
+
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style type="text/css">
+html { height: 100% }
+body { height: 100%; margin: 0; padding: 0 }
+#map_canvas { height: 100% }
+</style> -->
+<!--- need to load the geometry library for calculating distances, see http://www.svennerberg.com/2011/04/calculating-distances-and-areas-in-google-maps-api-3/ --->
+<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=geometry&sensor=false"></script>
+
+<script type="text/javascript"> 
+    function initialize() {
+        var startLatlng = new google.maps.LatLng(54.42838,-2.9623);
+        var endLatLng = new google.maps.LatLng(52.908902,49.716793);
+
+        var myOptions = {
+            zoom: 4,
+            center: new google.maps.LatLng(51.399206,18.457031),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+        var startMarker = new google.maps.Marker({
+            position: startLatlng, 
+            map: map
+        });
+
+        var endMarker = new google.maps.Marker({
+            position: endLatLng, 
+            map: map
+        });
+
+        // draw a line between the points
+        var line = new google.maps.Polyline({
+            path: [startLatlng, endLatLng],
+            strokeColor: "##FF0000",
+            strokeOpacity: 0.5,
+            strokeWeight: 4,
+            geodesic: true,
+            map: map
+        });
+
+        // what's the distance between these two markers?
+        var distance = google.maps.geometry.spherical.computeDistanceBetween(
+            startLatlng, 
+            endLatLng
+        );
+
+        // 200 miles in meters
+        var markerDistance = 200 * 1609.344;
+
+        var drawMarkers = true;
+
+        var newLatLng = startLatlng;
+
+        // stop as soon as we've gone beyond the end point 
+        while (drawMarkers == true) {
+            // what's the 'heading' between them?
+            var heading = google.maps.geometry.spherical.computeHeading(
+                newLatLng, 
+                endLatLng
+            );
+
+            // get the latlng X miles from the starting point along this heading
+             var newLatLng = google.maps.geometry.spherical.computeOffset(
+                newLatLng,
+                markerDistance, 
+                heading
+            );
+
+            // draw a marker
+            var newMarker = new google.maps.Marker({
+                position: newLatLng, 
+                map: map
+            });
+
+            // calculate the distance between our new marker and the end marker
+            var newDistance = google.maps.geometry.spherical.computeDistanceBetween(
+                newLatLng, 
+                endLatLng
+            );
+
+            if (newDistance <= markerDistance) {
+                drawMarkers = false;
+            }
+        }
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+<body>
+  <div id="map_canvas"></div>
+</body>
+</html> -->

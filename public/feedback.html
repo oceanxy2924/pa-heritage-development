@@ -1,0 +1,203 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <link rel="stylesheet" href="assets/css/review.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="assets/img/favicon.png" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="assets/css/fa.css" rel="stylesheet" />
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i" rel="stylesheet" />
+  <script src="assets/js/review.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    * {
+      font-family:"Dosis", sans-serif;
+      font-weight: 500;
+    } 
+    p {
+      font-size: 20px;
+    }
+    .button {
+      background-color: #00A6FF;
+      border: none;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      width: 30%;
+    }
+    .buttonsubmit {
+      border-radius: 12px;
+    }
+    img{
+      width: 200px;
+      height: auto;
+      margin-bottom:16px;
+    }
+    .buttonmodal {
+      background-color: #0f72e5;
+      border: none;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 2px;
+      cursor: pointer;
+      width: 25%;
+      border-radius: 12px;
+      margin-left: 38%;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="background-color:#d3e5fa">
+  <div class="demo-wrap" style="height: 150%;">
+    <!-- <img class="demo-bg" src="assets/img/background.jpg" alt=""> -->
+    <div class="demo-content">
+      <a href="congratsPageCT.html">&#10060</a>
+      <br>
+      <br>
+      <div style="margin-left:10%">
+      <div style="width:800px; margin:0 auto;">
+        <div style="justify-content: center;">
+          <h1>Feedback Form</h1>
+          <p style="font-size: 19px;">We would love to hear your thoughts, <br>suggestion, concerns or
+            problems with<br>anything so we can improve!</p>
+          <br>
+          <form> 
+            <p>Nickname:</p>
+            <input style="width: 300px;" type="text" id="fname" name="fname" value="" placeholder="Your Nickname"><br>
+            <br>
+            <p>Describe your feedback:</p>
+            <textarea rows="4" cols="40" name="comment" form="usrform" placeholder="Describe here...">
+            </textarea><br>
+          </form>
+          <p>Rate your experience:</p>
+          <form class="rating">
+            <label>
+              <input type="radio" name="stars" value="1" />
+              <span class="icon">★</span>
+            </label>
+            <label>
+              <input type="radio" name="stars" value="2" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+            </label>
+            <label>
+              <input type="radio" name="stars" value="3" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+            </label>
+            <label>
+              <input type="radio" name="stars" value="4" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+            </label>
+            <label>
+              <input type="radio" name="stars" value="5" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+            </label>
+          </form>
+        </div>
+        <div class="container" style="margin-left:3%; margin-top: 20%;">
+        <button class="button buttonsubmit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" value="submit">Submit Feedback</button>
+      </div>
+    </div>
+      <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="border-radius:8px">
+        <div class="modal-header" style="border-radius:8px">
+          <img src="assets/img/hero-img.png">
+        </div>
+        <div class="modal-body">
+          <p style="text-align: center; font-size: 20px;">Thank You for your feedback!</p>
+          <a href="congratsPageCT.html">
+            <button type="button" class="buttonmodal">Close</button>
+          </a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div>
+      <!-- <nav class="navbar-fixed-bottom navbar-default" >
+        <div class="tab-nav-container container-fluid text-center">
+          <a href="../index.html">
+            <div>
+              <div class="tab red">
+                <i class="fas fa-home"></i>
+              </div>
+              <p class="tab-text">Home</p>
+            </div>
+          </a>
+          <a>
+            <div>
+              <div class="tab purple">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <p class="tab-text">Map</p>
+            </div>
+          </a>
+          <a>
+            <div>
+              <div class="tab green">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <p class="tab-text text-left">Calendar</p>
+            </div>
+          </a>
+          <a href="../Login/login.html">
+            <div>
+              <div class="tab active orange">
+                <i class="fas fa-user"></i>
+              </div>
+              <p class="tab-text active">Profile</p>
+            </div>
+          </a>
+        </div>
+      </nav> -->
+    <!-- <script type="text/javascript">
+        window.addEventListener("load", function(){
+        setTimeout(
+            function open(event){
+                document.querySelector(".popup").style.display = "block";
+            },
+            1000
+        )
+    });
+        </script> -->
+    </div>
+
+  </div>
+</div>
+</body>
+
+</html>

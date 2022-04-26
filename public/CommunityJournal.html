@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Community Journal</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i"
+        rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="assets/css/fa.css" rel="stylesheet" />
+    <link href="assets/css/login.css" rel="stylesheet" />
+    <link href="assets/css/Community Journal.css" rel="stylesheet" />
+    <link href="https://code.jquery.com/mobile/1.5.0-rc1/jquery.mobile-1.5.0-rc1.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href="assets/css/lightslider.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+    <div class="bg-wrap">
+        <section class="vh-100 content" style="overflow-x: scroll;">
+            <div style="position: absolute; top: 0; left: 0; z-index: 1;">
+                <a id="upload" data-bs-placement="right" title="Upload your pictures here!" href="CJUpload.html">
+                    <i class="fas fa-upload mt-2 ms-2" style="font-size: 2rem;"></i></a>
+            </div>
+            <div id="title" class="welcome-text text-center" style="display: inline-flex;
+            align-items: center; margin:auto">
+                Gallery
+            </div>
+            <div class="form-group">
+                <select class="form-select" id="trailfilter">
+                    <option selected value="Little India">Little India</option>
+                    <option value="Peranakan">Peranakan</option>
+                    <option value="Kampong Glam">Kampong Glam</option>
+                    <option value="Chinatown">Chinatown</option>
+                </select>
+            </div>
+            <img class="bg-img" src="assets/img/background.jpg" alt="">
+
+
+            <div id="container" class="pt-5 h-100">
+                <hr style="width:80%; margin: auto; height:2px">
+                <div id="content" class="mb-md-5 mt-md-4" style="max-width: 100%;">
+                    <div id="journal" style="overflow-y: scroll; height: 75vh;">
+                        <div id="gallery" class="gallery mt-3">
+                        </div>
+                    </div>
+                    <!-- <div class='pagination'><span>1 / 2</span></div> -->
+
+                </div>
+            </div>
+
+            <nav class="navbar-fixed-bottom navbar-default" style="padding-top: 15%; ">
+                <div class="tab-nav-container text-center" style="background-color: #70a0ca;"">
+                    <a href="overview.html">
+                    <div>
+                        <div class="tab red">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <p class="tab-text">Home</p>
+                    </div>
+                    </a>
+                    <a href="map.html">
+                        <div>
+                            <div class="tab purple">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <p class="tab-text">Map</p>
+                        </div>
+                    </a>
+                    <!-- <a>
+                        <div>
+                            <div class="tab green">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <p class="tab-text text-left">Calendar</p>
+                        </div>
+                    </a> -->
+                    <a href="CommunityJournal.html">
+                        <div>
+                            <div class="tab active orange">
+                                <i class="fas fa-images"></i>
+                            </div>
+                            <p class="tab-text active">Gallery</p>
+                        </div>
+                    </a>
+                </div>
+            </nav>
+
+    </div>
+    </div>
+
+    </div>
+
+    </section>
+    <!-- End Login -->
+
+    <main id="main"></main>
+    <!-- End #main -->
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <script type="module">
+        import {
+            initializeApp
+        } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js'
+        import { 
+            getDatabase, ref, child, get
+        } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js'
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAiWhsurmpe0XHv5fT6woKqY6hURnd4Kno",
+            authDomain: "fypj-f74df.firebaseapp.com",
+            databaseURL: "https://fypj-f74df-default-rtdb.asia-southeast1.firebasedatabase.app",
+            storageBucket: "fypj-f74df.appspot.com",
+        };
+        const firebaseApp = initializeApp(firebaseConfig);
+
+        var title = document.getElementById('title');
+        var filter = document.getElementById('trailfilter');
+        var gallery = document.getElementById('gallery');
+        var journal = document.getElementById('journal')
+
+        const noImages = document.createElement('h2');
+        noImages.id = 'noimg';
+        var imgcount = 0;
+        const dbRef = ref(getDatabase());
+        function createimgHtml(src,uiid) {
+            const newImg = document.createElement('img');
+            newImg.src = src;
+            newImg.style = "width:100%;height:100%";
+            gallery.appendChild(newImg);
+            newImg.onclick = function(){window.location.href = 'imagepreview.html?' + uiid}
+            imgcount++;
+        }
+        function getimages(){
+            gallery.innerHTML = "";
+
+            get(child(dbRef, 'UploadRequests/')).then((snapshot)=> {
+                if(snapshot.exists()){
+
+                    var allimages = snapshot.val()
+                    for(var image in allimages){
+                        if(allimages[image].approved){
+
+                            if(allimages[image].trail == trailfilter.value){
+                                createimgHtml(allimages[image].image,image);
+                            }
+                            else{
+                                noImages.innerText = "No Images Found. Upload yours now!"
+                                if(journal.childElementCount == 1){
+                                    journal.appendChild(noImages);
+                                }
+                            }
+                        }
+                    }
+                    if(imgcount == 0){
+                        noImages.innerText = "No Images Found. Upload yours now!"
+                                if(journal.childElementCount == 1){
+                                    journal.appendChild(noImages);
+                                }
+                    }
+                }
+                else{
+                    noImages.innerText = "No Images Found. Upload yours now!"
+                    console.log(journal.childElementCount);
+
+                    if(journal.childElementCount == 1){
+                        journal.appendChild(noImages);
+                    }
+                }
+            });
+        }
+        window.onload = function () {
+            title.innerHTML = 'Gallery - ' +trailfilter.value
+            getimages();
+        }
+        trailfilter.onchange = function () {
+            title.innerHTML = 'Gallery - ' +trailfilter.value;
+            console.log(journal.children)
+
+            if(journal.querySelector('#noimg')){
+                journal.removeChild(noImages);
+            }
+            getimages();
+        }
+        
+        
+        var icon = document.getElementById('upload')
+        var tooltip = new bootstrap.Tooltip(icon)
+        var shown = localStorage.getItem('tooltipShown');
+        if (!shown) {
+            window.onload = (event) => {
+                tooltip.toggle();
+                setTimeout(function () {
+                    tooltip.toggle();
+                }, 3000);
+            };
+            localStorage.setItem('tooltipShown', true);
+        }
+       
+    </script>
+
+
+</body>
+
+</html>

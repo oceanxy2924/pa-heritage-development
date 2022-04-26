@@ -1,0 +1,12 @@
+h1 {
+    font-family: 'Lato', san-serif;
+}
+
+a {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.container{
+    padding: 0px;
+}

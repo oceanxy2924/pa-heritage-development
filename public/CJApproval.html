@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Approve Image</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i"
+        rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="assets/css/fa.css" rel="stylesheet" />
+    <link href="assets/css/login.css" rel="stylesheet" />
+    <link href="assets/css/Community Journal.css" rel="stylesheet" />
+    <link href="https://code.jquery.com/mobile/1.5.0-rc1/jquery.mobile-1.5.0-rc1.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href="assets/css/lightslider.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/upload.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+    <div class="bg-wrap">
+        <img class="bg-img" src="assets/img/background.jpg" alt="">
+        <section class="vh-100 content" style="overflow-x: scroll;">
+
+            <div class="welcome-text text-center" style="display: inline-flex;
+            align-items: center; margin:auto">
+                <div class="px-3" style="position: absolute; left: 5px;">
+                    <a href="CommunityJournal.html"><i class="fas fa-chevron-left"></i></a>
+                </div>
+                Community Journal - Image Approval
+            </div>
+
+
+            <div id="container" class="pt-5 h-100" style="overflow: scroll;">
+                <div class="mx-auto my-5">
+                    <div class="container ipBox">
+                        <img id="imgpreview">
+                    </div>
+                    <div id="textboxes" class="mb-3">
+                        <div class="px-5 mb-2">
+                            <label for="title" class="form-label">Title:</label>
+                            <input type="text" class="form-control" id="title" placeholder="Title" readonly>
+                        </div>
+                        <div class="px-5 mb-2">
+                            <label for="caption" class="form-label">Caption:</label>
+                            <input type="text" class="form-control" id="caption" placeholder="Caption" maxlength="240"
+                                readonly>
+                        </div>
+                        <div class="px-5 mb-2 form-group">
+                            <label for="trail" class="form-label pt-2">Select Trail:</label>
+                            <select class="form-select" id="trail" style="border-color:black; max-width: fit-content;">
+                                <option value="Little India">Little India</option>
+                                <option value="Peranakan">Peranakan</option>
+                                <option value="Kampong Glam">Kampong Glam</option>
+                                <option value="Chinatown">Chinatown</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="btnApprove" type="button" class="btn btn-success">Approve Post</button>
+                    <button id="btnDisapprove" type="button" class="btn btn-danger">Reject Post</button>
+                </div>
+            </div>
+            <!-- <nav class="navbar-fixed-bottom navbar-default" style="padding-top: 10%;">
+                <div class="tab-nav-container container-fluid text-center">
+                    <a href="../index.html">
+                        <div>
+                            <div class="tab red">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <p class="tab-text">Home</p>
+                        </div>
+                    </a>
+                    <a>
+                        <div>
+                            <div class="tab purple">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <p class="tab-text">Map</p>
+                        </div>
+                    </a>
+                    <a>
+                        <div>
+                            <div class="tab green">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <p class="tab-text text-left">Calendar</p>
+                        </div>
+                    </a>
+                    <a href="../Login/login.html">
+                        <div>
+                            <div class="tab active orange">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <p class="tab-text active">Profile</p>
+                        </div>
+                    </a>
+                </div>
+            </nav> -->
+            <div id="ResultModal" class="modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 id="mTitle" class="modal-title"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="mBody"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="close" class="btn btn-secondary" data-bs-dismiss="modal"
+                                onclick="location.href='CommunityJournal.html'">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+
+    </div>
+
+    </section>
+    <!-- End Login -->
+
+    <main id="main"></main>
+    <!-- End #main -->
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <script type="module">
+        import {
+            initializeApp
+        } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js'
+        import {
+            getStorage, ref, uploadBytes, getDownloadURL, listAll, deleteObject
+        } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-storage.js'
+
+        import { 
+            getDatabase, ref as dbRef ,child,get,update,remove
+        } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js'
+
+        // Set the configuration for your app
+        // TODO: Replace with your app's config object
+        const firebaseConfig = {
+            apiKey: "AIzaSyAiWhsurmpe0XHv5fT6woKqY6hURnd4Kno",
+            authDomain: "fypj-f74df.firebaseapp.com",
+            databaseURL: "https://fypj-f74df-default-rtdb.asia-southeast1.firebasedatabase.app",
+            storageBucket:  "fypj-f74df.appspot.com",
+        };
+        const firebaseApp = initializeApp(firebaseConfig);
+        const database = getDatabase();
+        var disapprovebtn = document.getElementById('btnDisapprove');
+        var approvebtn = document.getElementById('btnApprove');
+        var myModal = new bootstrap.Modal(document.getElementById('ResultModal'))
+        var modaltitle = document.getElementById('mTitle');
+        var modalBody = document.getElementById('mBody');
+        var img = "";
+        var queryString = decodeURIComponent(window.location.search);
+        queryString = queryString.substring(1);
+        const imageRef = dbRef(getDatabase());
+        var trailselect = document.getElementById('trail');
+
+        function retrieveImg() {
+           get(child(imageRef,'UploadRequests/' + queryString)).then((snapshot)=>{
+               if(snapshot.exists()){
+                   console.log(snapshot.val());
+                   var data = snapshot.val();
+                   var imgpreview = document.getElementById('imgpreview')
+                   var title = document.getElementById('title');
+                   var caption = document.getElementById('caption');
+                   imgpreview.style.display = 'block';
+                   imgpreview.src = data.image;
+                   title.value = data.title;
+                   caption.value = data.caption;
+                   trailselect.value = data.trail;
+
+
+               }
+           })
+        }
+        window.onload = retrieveImg;
+
+        function approveImg() {
+            var trail = trailselect.value;
+            update(dbRef(database,'UploadRequests/' + queryString),{
+                approved:true,
+                trail:trail,
+            }).then(()=> {
+                modaltitle.innerHTML = 'Approved Image Post';
+                modalBody.innerHTML = 'You have approved this post successfully';
+                myModal.show()
+            })
+           
+        }
+
+        function disapproveImg() {
+            var trail = trailselect.value;
+            const storage = getStorage();
+
+            // Create a reference under which you want to list
+            const listRef = ref(storage);
+
+            // Find all the prefixes and items.
+            listAll(listRef)
+            .then((res) => {
+                res.items.forEach((itemRef) => {
+                // All the items under listRef.
+                    console.log(itemRef._location.path)
+                    if(itemRef._location.path.includes(queryString)){
+                        console.log("SUCCESS")
+                        const delFileRef = ref(storage, itemRef._location.path)
+                        deleteObject(delFileRef).then(() => {
+                            remove(dbRef(database,'UploadRequests/' + queryString)).then(()=> {
+                                modaltitle.innerHTML = 'Disapproved Image Post';
+                                modalBody.innerHTML = 'You have disapproved this post successfully';
+                                myModal.show();
+                            })
+                        })
+                    }
+                });
+            }).catch((error) => {
+                // Uh-oh, an error occurred!
+            });
+           
+           
+        }
+        disapprovebtn.onclick = function () {
+            disapproveImg()
+        };
+        approvebtn.onclick = function () {
+            approveImg()
+        };
+    </script>
+</body>
+
+</html>
