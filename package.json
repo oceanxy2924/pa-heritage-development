@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "aframe-html-shader": "^0.2.0"
+    "aframe-html-shader": "^0.2.0",
+    "webpack": "^5.72.0"
   }
 }
