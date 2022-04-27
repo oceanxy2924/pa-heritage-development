@@ -2,10 +2,11 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "scripts": {
+    "build": "webpack --config webpack.config.js",
     "serve": "firebase emulators:start --only functions",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
-    "build": "npm run build && firebase deploy --only functions",
+    "deploy": "npm run build && firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
   "engines": {
@@ -17,8 +18,7 @@
     "firebase-functions": "^3.18.0"
   },
   "devDependencies": {
-    "firebase-functions-test": "^0.2.0",
-    "webpack-cli": "^4.9.2"
+    "firebase-functions-test": "^0.2.0"
   },
   "private": true
 }
