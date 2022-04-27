@@ -4,7 +4,7 @@ on:
     branches:
       - master
 
-  deploy:
+  build:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
