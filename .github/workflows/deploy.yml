@@ -1,33 +1,34 @@
-name: Automatic hosting to Firebase
+name: Deploy to Google
+
+# Run this workflow every time a new commit pushed to your repository
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
+
 
 jobs:
   build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-      - name: Install Dependencies
-        run: npm install
-      - name: Build
-        run: npm run build-prod
 
-  deploy:
-    name: Deploy
-    needs: build
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./functions
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PA_DEVELOPMENT_PROJECT }}
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: install libraries
+      run: npm install
+      working-directory: ${{env.working-directory}}
+    - name: install firebase
+      run: npm i firebase-tools -g  
+    - name: deploy
+      run: firebase deploy --token ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PA_DEVELOPMENT_PROJECT }}
 
 
