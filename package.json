@@ -2,5 +2,8 @@
   "dependencies": {
     "aframe-html-shader": "^0.2.0",
     "webpack": "^5.72.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.9.2"
   }
 }
