@@ -2,3 +2,6 @@
 
 
 firebase deploy --token "$FIREBASE_TOKEN"
+
+
+firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PA_DEVELOPMENT_PROJECT }}'
